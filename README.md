@@ -10,8 +10,9 @@
 
 Từ điển Họ Tên trong Việt Nam. Bộ từ điển được thu thập từ nhiều nguồn trên Internet. Ở phân loại thành nhóm Nam/Nữ.
 
-1. [girl.txt](girl.txt) - Từ điển tên nữ(first-name)  trong tiếng Việt
-2. [uit_member.json](uit_member.json) - Từ điển họ và tên (full-name), crawler từ forum.uit.edu.vn.
+1. [girl.txt](girl.txt) - Từ điển tên cho nữ (first-name).
+2. [boy.txt](boy.txt) - Từ điển tên cho nam (first-name).
+3. [uit_member.json](uit_member.json) - Từ điển họ và tên (full-name), crawler từ forum.uit.edu.vn.
 
 # How to contribute
 
