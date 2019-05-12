@@ -15,7 +15,7 @@ Từ điển Họ Tên trong Việt Nam. Bộ từ điển được thu thập t
 3. [girl_one_word.txt](girl_one_word.txt) - Tên nữ, 1 kí tự.
 4. [girl_unsigned.txt](girl_unsigned.txt) - Tên nữ, không dấu.
 5. [girl_one_word_unsigned.txt](girl_one_word_unsigned.txt) - Tên nữ, 1 kí tự, không dấu.
-6. [uit_member.json](uit_member.json) - Từ điển họ và tên (full-name), crawler từ forum.uit.edu.vn.
+6. [uit_member.json](uit_member.json) - Từ điển họ và tên (full-name), crawler từ forum.uit.edu.vn (Dec 28, 2016).
 
 # How to contribute
 
