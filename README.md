@@ -1,5 +1,10 @@
 # Vietnamese Name DB 
 
+**Support**
+
+<a href="https://s.duyet.net/r/patreon"><img src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" width="160"></a>
+
+
 ### Từ điển Họ Tên trong Việt Nam
 
 > Tên người Việt Nam gồm có 3 phần chính: Họ + Tên Đệm + Tên Chính thường được chọn lựa khá kỹ về mặt ngữ âm và ngữ nghĩa, dùng để phân biệt người này với người khác. Ngày nay, nhiều người Việt hải ngoại đặt tên cho con theo tên tiếng nước ngoài. Không có một nguyên tắc chung nào trong việc đặt tên, nhưng đối với tâm lý của người Việt Nam, việc đặt tên rất quan trọng vì mỗi cái tên gắn chặt với mỗi con người suốt đời. Có thể căn cứ vào đặc điểm, giới tính, hoàn cảnh gia đình, dòng họ, quê hương, xã hội và cả ước vọng của người đặt tên gửi gắm vào cái tên nào đó.
