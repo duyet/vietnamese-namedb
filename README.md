@@ -11,16 +11,26 @@
 
 > Điểm khác biệt cơ bản và độc đáo của tên người Việt Nam so với Trung Quốc, Hàn Quốc, Nhật Bản là luôn xưng hô bằng tên chính chứ không phải bằng họ.
 
-# Data 
+# Data
 
-Từ điển Họ Tên trong Việt Nam. Bộ từ điển được thu thập từ nhiều nguồn trên Internet. Ở phân loại thành nhóm Nam/Nữ.
+Từ điển Họ Tên trong Việt Nam. Bộ từ điển được thu thập từ nhiều nguồn trên Internet và được cập nhật thường xuyên. Phân loại thành nhóm Nam/Nữ với các biến thể có dấu/không dấu.
 
-1. [girl.txt](girl.txt) - Từ điển tên cho nữ (first-name).
-2. [boy.txt](boy.txt) - Từ điển tên cho nam (first-name).
-3. [girl_one_word.txt](girl_one_word.txt) - Tên nữ, 1 kí tự.
-4. [girl_unsigned.txt](girl_unsigned.txt) - Tên nữ, không dấu.
-5. [girl_one_word_unsigned.txt](girl_one_word_unsigned.txt) - Tên nữ, 1 kí tự, không dấu.
-6. [uit_member.json](uit_member.json) - Từ điển họ và tên (full-name), crawler từ forum.uit.edu.vn (Dec 28, 2016).
+## Tên Nam (Boy Names)
+1. [boy.txt](boy.txt) - Từ điển tên cho nam (first-name) - 1,236 names
+2. [boy_unsigned.txt](boy_unsigned.txt) - Tên nam, không dấu - 1,236 names
+3. [boy_one_word.txt](boy_one_word.txt) - Tên nam, 1 từ - 334 words
+4. [boy_one_word_unsigned.txt](boy_one_word_unsigned.txt) - Tên nam, 1 từ, không dấu - 334 words
+
+## Tên Nữ (Girl Names)
+5. [girl.txt](girl.txt) - Từ điển tên cho nữ (first-name) - 1,316 names
+6. [girl_unsigned.txt](girl_unsigned.txt) - Tên nữ, không dấu - 1,316 names
+7. [girl_one_word.txt](girl_one_word.txt) - Tên nữ, 1 từ - 256 words
+8. [girl_one_word_unsigned.txt](girl_one_word_unsigned.txt) - Tên nữ, 1 từ, không dấu - 256 words
+
+## Họ và Tên Đầy Đủ (Full Names)
+9. [uit_member.json](uit_member.json) - Từ điển họ và tên (full-name), crawler từ forum.uit.edu.vn (Dec 28, 2016)
+
+**Tổng số:** 6,284 tên trong database (cập nhật 2025)
 
 # How to contribute
 
@@ -33,7 +43,7 @@ Từ điển Họ Tên trong Việt Nam. Bộ từ điển được thu thập t
 
 MIT License
 
-Copyright (c) 2016 Van-Duyet Le
+Copyright (c) 2016-2025 Van-Duyet Le
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
