@@ -1,45 +1,100 @@
-# Vietnamese Name DB 
+# Vietnamese Name Database
 
-**Support**
+A comprehensive, open-source database of Vietnamese personal names (given names) compiled from multiple sources across the Internet. This dataset provides 6,284+ names categorized by gender, with multiple format variants to support various applications including text processing, natural language processing, form validation, and cultural research.
 
-<a href="https://s.duyet.net/r/patreon"><img src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" width="160"></a>
+## Overview
 
+Vietnamese personal names consist of three main components: Family Name (Họ) + Middle Name (Tên Đệm) + Given Name (Tên Chính). The given name is carefully selected based on phonetic harmony, semantic meaning, gender, family tradition, regional customs, and parental aspirations.
 
-### Từ điển Họ Tên trong Việt Nam
+A distinctive characteristic of Vietnamese naming culture, compared to Chinese, Korean, and Japanese traditions, is that individuals are addressed by their given name rather than their family name.
 
-> Tên người Việt Nam gồm có 3 phần chính: Họ + Tên Đệm + Tên Chính thường được chọn lựa khá kỹ về mặt ngữ âm và ngữ nghĩa, dùng để phân biệt người này với người khác. Ngày nay, nhiều người Việt hải ngoại đặt tên cho con theo tên tiếng nước ngoài. Không có một nguyên tắc chung nào trong việc đặt tên, nhưng đối với tâm lý của người Việt Nam, việc đặt tên rất quan trọng vì mỗi cái tên gắn chặt với mỗi con người suốt đời. Có thể căn cứ vào đặc điểm, giới tính, hoàn cảnh gia đình, dòng họ, quê hương, xã hội và cả ước vọng của người đặt tên gửi gắm vào cái tên nào đó.
+## Dataset Structure
 
-> Điểm khác biệt cơ bản và độc đáo của tên người Việt Nam so với Trung Quốc, Hàn Quốc, Nhật Bản là luôn xưng hô bằng tên chính chứ không phải bằng họ.
+### Boy Names (Tên Nam)
+| File | Description | Count |
+|------|-------------|-------|
+| [boy.txt](boy.txt) | Vietnamese given names with diacritics | 1,236 names |
+| [boy_no_accents.txt](boy_no_accents.txt) | Names without diacritical marks | 1,236 names |
+| [boy_one_word.txt](boy_one_word.txt) | Single-word name components | 334 words |
+| [boy_one_word_no_accents.txt](boy_one_word_no_accents.txt) | Single-word components without diacritics | 334 words |
 
-# Data
+### Girl Names (Tên Nữ)
+| File | Description | Count |
+|------|-------------|-------|
+| [girl.txt](girl.txt) | Vietnamese given names with diacritics | 1,316 names |
+| [girl_no_accents.txt](girl_no_accents.txt) | Names without diacritical marks | 1,316 names |
+| [girl_one_word.txt](girl_one_word.txt) | Single-word name components | 256 words |
+| [girl_one_word_no_accents.txt](girl_one_word_no_accents.txt) | Single-word components without diacritics | 256 words |
 
-Từ điển Họ Tên trong Việt Nam. Bộ từ điển được thu thập từ nhiều nguồn trên Internet và được cập nhật thường xuyên. Phân loại thành nhóm Nam/Nữ với các biến thể có dấu/không dấu.
+### Full Names
+| File | Description |
+|------|-------------|
+| [uit_member.json](uit_member.json) | Complete names (family + middle + given) crawled from forum.uit.edu.vn (December 2016) |
 
-## Tên Nam (Boy Names)
-1. [boy.txt](boy.txt) - Từ điển tên cho nam (first-name) - 1,236 names
-2. [boy_no_accents.txt](boy_no_accents.txt) - Tên nam, bỏ dấu - 1,236 names
-3. [boy_one_word.txt](boy_one_word.txt) - Tên nam, 1 từ - 334 words
-4. [boy_one_word_no_accents.txt](boy_one_word_no_accents.txt) - Tên nam, 1 từ, bỏ dấu - 334 words
+**Total:** 6,284 names (updated 2025)
 
-## Tên Nữ (Girl Names)
-5. [girl.txt](girl.txt) - Từ điển tên cho nữ (first-name) - 1,316 names
-6. [girl_no_accents.txt](girl_no_accents.txt) - Tên nữ, bỏ dấu - 1,316 names
-7. [girl_one_word.txt](girl_one_word.txt) - Tên nữ, 1 từ - 256 words
-8. [girl_one_word_no_accents.txt](girl_one_word_no_accents.txt) - Tên nữ, 1 từ, bỏ dấu - 256 words
+## Use Cases
 
-## Họ và Tên Đầy Đủ (Full Names)
-9. [uit_member.json](uit_member.json) - Từ điển họ và tên (full-name), crawler từ forum.uit.edu.vn (Dec 28, 2016)
+- **Name Validation**: Validate Vietnamese names in registration forms and user input
+- **Text Processing**: Identify and extract Vietnamese personal names from text
+- **NLP & Machine Learning**: Training data for name recognition and classification models
+- **Data Normalization**: Convert between accented and non-accented name formats
+- **Cultural Research**: Study Vietnamese naming patterns and trends
+- **Application Development**: Autocomplete, name suggestions, demographic analysis
 
-**Tổng số:** 6,284 tên trong database (cập nhật 2025)
+## File Formats
 
-# How to contribute
+- **Text files (.txt)**: One name per line, UTF-8 encoded
+- **JSON file (.json)**: Structured data with full name information
 
-1. Fork the project on Github
-2. Create a topic branch for your changes
-3. Ensure that you provide documentation and test coverage for your changes (patches won’t be accepted without)
-4. Create a pull request on Github (these are also a great place to start a conversation around a patch as early as possible)
+## Maintenance Scripts
 
-# License
+Three Python utilities are included for database maintenance:
+
+- **`update_database.py`**: Generate name variants (no_accents, one_word) for boy names
+- **`regenerate_all.py`**: Comprehensive regeneration of all name variants for both genders
+
+## Usage Example
+
+```python
+# Load names with diacritics
+with open('girl.txt', 'r', encoding='utf-8') as f:
+    names = [line.strip() for line in f]
+
+# Load names without diacritics for case-insensitive matching
+with open('girl_no_accents.txt', 'r', encoding='utf-8') as f:
+    names_normalized = [line.strip() for line in f]
+```
+
+```bash
+# Count unique single-word name components
+wc -l boy_one_word.txt girl_one_word.txt
+
+# Search for specific name patterns
+grep "Minh" boy.txt
+```
+
+## Contributing
+
+Contributions are welcome to expand and improve this database:
+
+1. **Fork** this repository
+2. **Create** a feature branch (`git checkout -b feature/add-names`)
+3. **Add** new names or improvements with proper documentation
+4. **Test** your changes using the provided Python scripts
+5. **Submit** a pull request with a clear description of changes
+
+Please ensure:
+- Names are properly formatted (one per line, UTF-8 encoding)
+- Diacritical marks are correctly applied
+- Changes are tested with regeneration scripts
+- Documentation is updated accordingly
+
+## Data Sources
+
+This database aggregates Vietnamese names from various public Internet sources, including forums, social networks, government databases, and cultural references. The dataset is continuously updated to reflect modern naming trends while preserving traditional names.
+
+## License
 
 MIT License
 
