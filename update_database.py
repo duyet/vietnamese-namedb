@@ -73,9 +73,9 @@ def extract_one_word_names(input_file):
     return sorted(one_word_names)
 
 
-def generate_unsigned_file(input_file, output_file):
+def generate_no_accents_file(input_file, output_file):
     """
-    Generate unsigned version of a name file
+    Generate version without accents/diacritics
     """
     print(f"Generating {output_file} from {input_file}...")
 
@@ -84,8 +84,8 @@ def generate_unsigned_file(input_file, output_file):
             for line in f_in:
                 name = line.strip()
                 if name:
-                    unsigned_name = remove_accents(name)
-                    f_out.write(unsigned_name + '\n')
+                    name_no_accents = remove_accents(name)
+                    f_out.write(name_no_accents + '\n')
 
     print(f"  ✓ Created {output_file}")
 
@@ -110,14 +110,14 @@ def main():
     print("=" * 50)
     print()
 
-    # Generate boy_unsigned.txt
-    generate_unsigned_file('boy.txt', 'boy_unsigned.txt')
+    # Generate boy_no_accents.txt
+    generate_no_accents_file('boy.txt', 'boy_no_accents.txt')
 
     # Generate boy_one_word.txt
     generate_one_word_file('boy.txt', 'boy_one_word.txt')
 
-    # Generate boy_one_word_unsigned.txt
-    generate_unsigned_file('boy_one_word.txt', 'boy_one_word_unsigned.txt')
+    # Generate boy_one_word_no_accents.txt
+    generate_no_accents_file('boy_one_word.txt', 'boy_one_word_no_accents.txt')
 
     print()
     print("✓ All missing boy name variants have been generated!")

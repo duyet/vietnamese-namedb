@@ -17,15 +17,15 @@ Từ điển Họ Tên trong Việt Nam. Bộ từ điển được thu thập t
 
 ## Tên Nam (Boy Names)
 1. [boy.txt](boy.txt) - Từ điển tên cho nam (first-name) - 1,236 names
-2. [boy_unsigned.txt](boy_unsigned.txt) - Tên nam, không dấu - 1,236 names
+2. [boy_no_accents.txt](boy_no_accents.txt) - Tên nam, bỏ dấu - 1,236 names
 3. [boy_one_word.txt](boy_one_word.txt) - Tên nam, 1 từ - 334 words
-4. [boy_one_word_unsigned.txt](boy_one_word_unsigned.txt) - Tên nam, 1 từ, không dấu - 334 words
+4. [boy_one_word_no_accents.txt](boy_one_word_no_accents.txt) - Tên nam, 1 từ, bỏ dấu - 334 words
 
 ## Tên Nữ (Girl Names)
 5. [girl.txt](girl.txt) - Từ điển tên cho nữ (first-name) - 1,316 names
-6. [girl_unsigned.txt](girl_unsigned.txt) - Tên nữ, không dấu - 1,316 names
+6. [girl_no_accents.txt](girl_no_accents.txt) - Tên nữ, bỏ dấu - 1,316 names
 7. [girl_one_word.txt](girl_one_word.txt) - Tên nữ, 1 từ - 256 words
-8. [girl_one_word_unsigned.txt](girl_one_word_unsigned.txt) - Tên nữ, 1 từ, không dấu - 256 words
+8. [girl_one_word_no_accents.txt](girl_one_word_no_accents.txt) - Tên nữ, 1 từ, bỏ dấu - 256 words
 
 ## Họ và Tên Đầy Đủ (Full Names)
 9. [uit_member.json](uit_member.json) - Từ điển họ và tên (full-name), crawler từ forum.uit.edu.vn (Dec 28, 2016)

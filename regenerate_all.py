@@ -57,15 +57,15 @@ def extract_one_word_names(input_file):
     return sorted(one_word_names)
 
 
-def generate_unsigned_file(input_file, output_file):
-    """Generate unsigned version of a name file"""
+def generate_no_accents_file(input_file, output_file):
+    """Generate version without accents/diacritics"""
     with open(input_file, 'r', encoding='utf-8') as f_in:
         with open(output_file, 'w', encoding='utf-8') as f_out:
             for line in f_in:
                 name = line.strip()
                 if name:
-                    unsigned_name = remove_accents(name)
-                    f_out.write(unsigned_name + '\n')
+                    name_no_accents = remove_accents(name)
+                    f_out.write(name_no_accents + '\n')
 
 
 def generate_one_word_file(input_file, output_file):
@@ -85,22 +85,22 @@ def process_gender(gender):
     print("-" * 40)
 
     base_file = f"{gender}.txt"
-    unsigned_file = f"{gender}_unsigned.txt"
+    no_accents_file = f"{gender}_no_accents.txt"
     one_word_file = f"{gender}_one_word.txt"
-    one_word_unsigned_file = f"{gender}_one_word_unsigned.txt"
+    one_word_no_accents_file = f"{gender}_one_word_no_accents.txt"
 
-    # Generate unsigned version
-    print(f"  • Generating {unsigned_file}...")
-    generate_unsigned_file(base_file, unsigned_file)
+    # Generate version without accents
+    print(f"  • Generating {no_accents_file}...")
+    generate_no_accents_file(base_file, no_accents_file)
 
     # Generate one-word version
     print(f"  • Generating {one_word_file}...")
     count = generate_one_word_file(base_file, one_word_file)
     print(f"    ({count} unique words)")
 
-    # Generate one-word unsigned version
-    print(f"  • Generating {one_word_unsigned_file}...")
-    generate_unsigned_file(one_word_file, one_word_unsigned_file)
+    # Generate one-word version without accents
+    print(f"  • Generating {one_word_no_accents_file}...")
+    generate_no_accents_file(one_word_file, one_word_no_accents_file)
 
     print(f"  ✓ All variants generated for {gender} names")
 
