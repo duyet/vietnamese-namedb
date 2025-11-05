@@ -1,39 +1,104 @@
-# Vietnamese Name DB 
+# Vietnamese Name Database
 
-**Support**
+A comprehensive, open-source database of Vietnamese personal names (given names) compiled from multiple sources across the Internet. This dataset provides 6,284+ names categorized by gender, with multiple format variants to support various applications including text processing, natural language processing, form validation, and cultural research.
 
-<a href="https://s.duyet.net/r/patreon"><img src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" width="160"></a>
+## Overview
 
+Vietnamese personal names consist of three main components: Family Name (Họ) + Middle Name (Tên Đệm) + Given Name (Tên Chính). The given name is carefully selected based on phonetic harmony, semantic meaning, gender, family tradition, regional customs, and parental aspirations.
 
-### Từ điển Họ Tên trong Việt Nam
+A distinctive characteristic of Vietnamese naming culture, compared to Chinese, Korean, and Japanese traditions, is that individuals are addressed by their given name rather than their family name.
 
-> Tên người Việt Nam gồm có 3 phần chính: Họ + Tên Đệm + Tên Chính thường được chọn lựa khá kỹ về mặt ngữ âm và ngữ nghĩa, dùng để phân biệt người này với người khác. Ngày nay, nhiều người Việt hải ngoại đặt tên cho con theo tên tiếng nước ngoài. Không có một nguyên tắc chung nào trong việc đặt tên, nhưng đối với tâm lý của người Việt Nam, việc đặt tên rất quan trọng vì mỗi cái tên gắn chặt với mỗi con người suốt đời. Có thể căn cứ vào đặc điểm, giới tính, hoàn cảnh gia đình, dòng họ, quê hương, xã hội và cả ước vọng của người đặt tên gửi gắm vào cái tên nào đó.
+## Dataset Structure
 
-> Điểm khác biệt cơ bản và độc đáo của tên người Việt Nam so với Trung Quốc, Hàn Quốc, Nhật Bản là luôn xưng hô bằng tên chính chứ không phải bằng họ.
+### Boy Names (Tên Nam)
+| File | Description | Count |
+|------|-------------|-------|
+| [boy.txt](boy.txt) | Vietnamese given names with diacritics | 1,236 names |
+| [boy_no_accents.txt](boy_no_accents.txt) | Names without diacritical marks | 1,236 names |
+| [boy_one_word.txt](boy_one_word.txt) | Single-word name components | 334 words |
+| [boy_one_word_no_accents.txt](boy_one_word_no_accents.txt) | Single-word components without diacritics | 334 words |
 
-# Data 
+### Girl Names (Tên Nữ)
+| File | Description | Count |
+|------|-------------|-------|
+| [girl.txt](girl.txt) | Vietnamese given names with diacritics | 1,316 names |
+| [girl_no_accents.txt](girl_no_accents.txt) | Names without diacritical marks | 1,316 names |
+| [girl_one_word.txt](girl_one_word.txt) | Single-word name components | 256 words |
+| [girl_one_word_no_accents.txt](girl_one_word_no_accents.txt) | Single-word components without diacritics | 256 words |
 
-Từ điển Họ Tên trong Việt Nam. Bộ từ điển được thu thập từ nhiều nguồn trên Internet. Ở phân loại thành nhóm Nam/Nữ.
+### Full Names
+| File | Description |
+|------|-------------|
+| [uit_member.json](uit_member.json) | Complete names (family + middle + given) crawled from forum.uit.edu.vn (December 2016) |
 
-1. [girl.txt](girl.txt) - Từ điển tên cho nữ (first-name).
-2. [boy.txt](boy.txt) - Từ điển tên cho nam (first-name).
-3. [girl_one_word.txt](girl_one_word.txt) - Tên nữ, 1 kí tự.
-4. [girl_unsigned.txt](girl_unsigned.txt) - Tên nữ, không dấu.
-5. [girl_one_word_unsigned.txt](girl_one_word_unsigned.txt) - Tên nữ, 1 kí tự, không dấu.
-6. [uit_member.json](uit_member.json) - Từ điển họ và tên (full-name), crawler từ forum.uit.edu.vn (Dec 28, 2016).
+**Total:** 6,284 names (updated 2025)
 
-# How to contribute
+## Use Cases
 
-1. Fork the project on Github
-2. Create a topic branch for your changes
-3. Ensure that you provide documentation and test coverage for your changes (patches won’t be accepted without)
-4. Create a pull request on Github (these are also a great place to start a conversation around a patch as early as possible)
+- **Name Validation**: Validate Vietnamese names in registration forms and user input
+- **Text Processing**: Identify and extract Vietnamese personal names from text
+- **NLP & Machine Learning**: Training data for name recognition and classification models
+- **Data Normalization**: Convert between accented and non-accented name formats
+- **Cultural Research**: Study Vietnamese naming patterns and trends
+- **Application Development**: Autocomplete, name suggestions, demographic analysis
 
-# License
+## File Formats
+
+- **Text files (.txt)**: One name per line, UTF-8 encoded
+- **JSON file (.json)**: Structured data with full name information
+
+## Maintenance Scripts
+
+Three Python utilities are included for database maintenance:
+
+- **`update_database.py`**: Generate name variants (no_accents, one_word) for boy names
+- **`regenerate_all.py`**: Comprehensive regeneration of all name variants for both genders
+
+## Usage Example
+
+```python
+# Load names with diacritics
+with open('girl.txt', 'r', encoding='utf-8') as f:
+    names = [line.strip() for line in f]
+
+# Load names without diacritics for case-insensitive matching
+with open('girl_no_accents.txt', 'r', encoding='utf-8') as f:
+    names_normalized = [line.strip() for line in f]
+```
+
+```bash
+# Count unique single-word name components
+wc -l boy_one_word.txt girl_one_word.txt
+
+# Search for specific name patterns
+grep "Minh" boy.txt
+```
+
+## Contributing
+
+Contributions are welcome to expand and improve this database:
+
+1. **Fork** this repository
+2. **Create** a feature branch (`git checkout -b feature/add-names`)
+3. **Add** new names or improvements with proper documentation
+4. **Test** your changes using the provided Python scripts
+5. **Submit** a pull request with a clear description of changes
+
+Please ensure:
+- Names are properly formatted (one per line, UTF-8 encoding)
+- Diacritical marks are correctly applied
+- Changes are tested with regeneration scripts
+- Documentation is updated accordingly
+
+## Data Sources
+
+This database aggregates Vietnamese names from various public Internet sources, including forums, social networks, government databases, and cultural references. The dataset is continuously updated to reflect modern naming trends while preserving traditional names.
+
+## License
 
 MIT License
 
-Copyright (c) 2016 Van-Duyet Le
+Copyright (c) 2016-2025 Van-Duyet Le
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
